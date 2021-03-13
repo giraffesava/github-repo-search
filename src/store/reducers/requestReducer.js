@@ -1,13 +1,38 @@
 import * as actionTypes from '../actions/actionTypes'
-import axios from 'axios'
 
 const initialState = {
-  value: ''
+  value: '',
+  data: null,
+  error: false,
+  loading: false
 }
 
-export const requestReducer = (state = initialState, action) => {
-  return{
-    type: actionTypes.API_REQUEST,
-    value: action.payload
+const reducer = (state = initialState, action) => {
+  switch (action.type){
+    case actionTypes.GET_API_REQUEST: 
+      return {
+        value: action.inputValue,
+        error: false,
+        loading: true
+      };
+    case actionTypes.GET_DATA_SUCCESS: 
+        return {
+          ...state,
+          data: action.data.items.map(item => ({
+            name: item.name,
+            description: item.description,
+            author: item.owner.login,
+            authorAvatar: item.owner.avatar_url,
+            stars: item.stargazers_count
+          }))
+        }
+    case actionTypes.GET_DATA_FAILED: 
+        return {
+          ...state, 
+          error: true
+        }     
+  default: return state  
   }
 }
+
+export default reducer

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
-import {requestReducer} from './requestReducer'
+import reducer from './requestReducer'
 
 export const rootReducer = combineReducers({
-  request: requestReducer
+  repos: reducer
 }) 

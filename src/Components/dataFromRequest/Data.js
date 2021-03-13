@@ -1,20 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 const Data = (props) => {
+  const data = useSelector(state => state.repos.data)
+  console.log(data)
   return (
     <div>
-      <h1>{props.request}</h1>
+    <h1></h1>
+      {/* {data ? <h1>{data}</h1> : null} */}
     </div>
   )
 }
 
-const mapStateToProps = state => {
-  console.log(state)
-  return {
-    request: state.request.value
-  }
-  
-}
-
-export default connect(mapStateToProps)(Data)
+export default Data

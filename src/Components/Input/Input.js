@@ -1,30 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './Input.module.css'
-import {connect} from 'react-redux'
-import { apiRequest } from '../../store/actions/request'
+import {useDispatch} from 'react-redux'
+import {getApiRequest} from '../../store/actions/index'
 
-const Input = (props) => {
-
-  const [value, setValue] = useState("")
-
-  useEffect(() => {
-    props.apiRequest(value)
-  }, [value])
-
+const Input = () => {
+  const dispatch = useDispatch()
   return (
     <div>
       <input 
         type="text" 
-        placeholder="Input the value" 
-        value={value} 
-        onInput={(event) => setValue(event.target.value)}
+        placeholder="Input the value"
+        onChange={(event) => dispatch(getApiRequest(event.target.value))}
         />
     </div>
   )
 }
 
-const mapDispatchToProps = {
-  apiRequest
-}
-
-export default connect(null, mapDispatchToProps)(Input)
+export default Input
