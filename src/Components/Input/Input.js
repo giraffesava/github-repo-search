@@ -9,7 +9,7 @@ const Input = () => {
     <div>
       <input 
         type="text" 
-        placeholder="Input the value"
+        placeholder="Input the repository"
         onChange={(event) => dispatch(getApiRequest(event.target.value))}
         />
     </div>

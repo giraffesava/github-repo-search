@@ -1,0 +1,43 @@
+/* CONTAINER */
+
+.Container {
+  border: 1px solid black;
+  margin: 10px auto;
+  display: flex;
+  width: 60%;
+}
+
+/* LEFT SIDE */
+
+.LeftSide {
+  width: 30%;
+  border-right: 1px solid black;
+  padding: 10px 0px 10px 0px;
+  box-sizing: border-box;
+}
+
+.LeftSide img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.LeftSide h1{
+  font-size: 15px;
+  text-align: center;
+  word-wrap: break-word
+}
+
+/* RIGHT SIDE */
+.RightSide {
+  width: 70%;
+  text-align: left;
+  max-width: 500px;
+  padding: 10px 20px 10px 20px;
+}
+
+.RightSide h3 {
+  font-size: 15px;
+  font-weight: 400;
+  word-wrap: break-word
+}

@@ -10,7 +10,7 @@ const Data = () => {
   console.log(data)
   let window = null
   if(!data && !loading){
-    window = <h1>Input name of repository</h1>
+    window = null
   } else if (error){
     window = <h1>Sorry, we have problems, try it again</h1>
   } else if (loading){
@@ -21,7 +21,7 @@ const Data = () => {
       key={item.id + Math.random()}
       name={item.name}
       author={item.author}
-      start={item.start}
+      stars={item.stars}
       description={item.description}
       authorAvatar={item.authorAvatar}
     />)
