@@ -17,14 +17,15 @@ const reducer = (state = initialState, action) => {
       };
     case actionTypes.GET_DATA_SUCCESS: 
         return {
-          ...state,
           data: action.data.items.map(item => ({
             name: item.name,
             description: item.description,
             author: item.owner.login,
             authorAvatar: item.owner.avatar_url,
-            stars: item.stargazers_count
-          }))
+            stars: item.stargazers_count,
+            id: item.owner.id
+          })),
+          loading: false
         }
     case actionTypes.GET_DATA_FAILED: 
         return {
