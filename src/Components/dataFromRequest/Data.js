@@ -7,11 +7,13 @@ const Data = () => {
   const loading = useSelector(state => state.repos.loading)
   const error = useSelector(state => state.repos.error)
   const data = useSelector(state => state.repos.data)
+  const value = useSelector(state => state.repos.value)
+
   console.log(data)
   let window = null
   if(!data && !loading){
     window = null
-  } else if (error){
+  } else if (error && value.lenght > 1){
     window = <h1>Sorry, we have problems, try it again</h1>
   } else if (loading){
     window = <h1>Loading...</h1>

@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects'
+import {call, put, takeEvery, delay} from 'redux-saga/effects'
 import * as actions from '../actions/index'
 import * as actionTypes from '../actions/actionTypes'
 import {getRepos} from '../api'
@@ -6,6 +6,7 @@ import {getRepos} from '../api'
 function* sagaRequestWorker({inputValue}){
   try{
     const data = yield call(getRepos, inputValue)
+    yield delay(1000)
     yield put(actions.getDataSuccess(data))
   } catch (error) {
     yield put(actions.getDataFailed())
