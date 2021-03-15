@@ -10,12 +10,12 @@ const Data = () => {
   const value = useSelector(state => state.repos.value)
 
   console.log(loading)
-  let window = null
+  let window = <h1>Write something</h1>
   if(!data && !loading){
-    window = null
+    window = <h1>Write something</h1>
   } else if (error){
-    window = <h1>Sorry, we have problems, try it again</h1>
-  } else if (loading){
+    window = <h1>Cann't find, try it again</h1>
+  } else if (loading && value.length > 0){
     window = <h1>Loading...</h1>
   } else if (data) {
     window = data.map(item => <Repositories 

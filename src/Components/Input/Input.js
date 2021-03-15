@@ -6,7 +6,6 @@ import {getApiRequest} from '../../store/actions/index'
 const Input = () => {
   const dispatch = useDispatch()
 
-  
   return (
     <div>
       <input 

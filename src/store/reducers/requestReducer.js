@@ -9,12 +9,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type){
-    case actionTypes.GET_API_REQUEST: 
-      return {
-        value: action.inputValue,
-        error: false,
-        loading: true
-      };
+    case actionTypes.GET_API_REQUEST:
+        return {
+          ...state,
+          value: action.inputValue,
+          loading: true
+        }
     case actionTypes.GET_DATA_SUCCESS: 
         return {
           data: action.data.items.map(item => ({
@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
         return {
           ...state, 
           error: true
-        }     
+        }
   default: return state  
   }
 }

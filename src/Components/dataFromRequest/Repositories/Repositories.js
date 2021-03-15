@@ -14,7 +14,7 @@ function Repositories(props) {
       <div className={classes.RightSide}>
         <h3><strong>Name:</strong> {props.name}</h3>
         <h3><strong>Description:</strong> {props.description}</h3>
-        <h3><strong>Stars:</strong> {props.stars}</h3>
+        <h3>{props.stars}<strong>★</strong></h3>
       </div>
     </div>
   )
