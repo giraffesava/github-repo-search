@@ -5,8 +5,8 @@ import {getRepos} from '../api'
 
 function* sagaRequestWorker({inputValue}){
     try{
-      const data = yield call(getRepos, inputValue)
       yield delay(1000)
+      const data = yield call(getRepos, inputValue)
       yield put(actions.getDataSuccess(data))
     } catch (error) {
       yield put(actions.getDataFailed())

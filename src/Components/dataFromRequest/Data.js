@@ -8,13 +8,10 @@ const Data = () => {
   const error = useSelector(state => state.repos.error)
   const data = useSelector(state => state.repos.data)
   const value = useSelector(state => state.repos.value)
-
   console.log(loading)
   let window = <h1>Write something</h1>
-  if(!data && !loading){
+  if(!data || error){
     window = <h1>Write something</h1>
-  } else if (error){
-    window = <h1>Cann't find, try it again</h1>
   } else if (loading && value.length > 0){
     window = <h1>Loading...</h1>
   } else if (data) {
@@ -28,9 +25,9 @@ const Data = () => {
     />)
   }
   return (
-    <>
+    <div>
       {window}
-    </>
+    </div>
   )
 }
 

@@ -9,6 +9,7 @@ const Input = () => {
   return (
     <div>
       <input 
+        autoFocus={true}
         type="text" 
         placeholder="Input the repository"
         onChange={(event) => dispatch(getApiRequest(event.target.value))}
