@@ -1,10 +1,10 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 import * as classes from './Repositories.module.css'
+import PropTypes from 'prop-types'
 
 function Repositories(props) {
   const data = useSelector(state => state.repos.data)
-  console.log(data)
   return (
     <div className={classes.Container}>
       <div className={classes.LeftSide}>
@@ -18,6 +18,14 @@ function Repositories(props) {
       </div>
     </div>
   )
+}
+
+Repositories.propTypes = {
+  name: PropTypes.string,
+  author: PropTypes.string,
+  stars: PropTypes.number,
+  description: PropTypes.string,
+  authorAvatar: PropTypes.string
 }
 
 export default Repositories
