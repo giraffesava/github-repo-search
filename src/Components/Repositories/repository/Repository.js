@@ -1,10 +1,8 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
-import * as classes from './Repositories.module.css'
+import * as classes from './Repository.module.css'
 import PropTypes from 'prop-types'
 
 function Repositories(props) {
-  const data = useSelector(state => state.repos.data)
   return (
     <div className={classes.Container}>
       <div className={classes.LeftSide}>

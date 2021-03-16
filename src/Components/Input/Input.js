@@ -9,6 +9,7 @@ const Input = () => {
   return (
     <div>
       <input 
+        className="input"
         autoFocus={true}
         type="text" 
         placeholder="Input the repository"

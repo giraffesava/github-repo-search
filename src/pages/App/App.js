@@ -1,12 +1,12 @@
 import Input from '../../Components/Input/Input';
-import Data from '../../Components/dataFromRequest/Data'
+import Repositories from '../../Components/Repositories/Repositories'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Input />
-      <Data />
+      <Repositories />
     </div>
   );
 }
