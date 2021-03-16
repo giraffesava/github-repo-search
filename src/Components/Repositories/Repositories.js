@@ -16,7 +16,7 @@ const Repositories = () => {
   return (
     <div>
       {!!data.length && data.map(item => <Repository 
-        key={item.id + Math.random()}
+        key={item.id}
         name={item.name}
         author={item.author}
         stars={item.stars}
