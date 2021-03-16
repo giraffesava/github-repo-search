@@ -2,7 +2,7 @@ import {GET_API_REQUEST, GET_DATA_SUCCESS, GET_DATA_FAILED} from '../actions/ind
 
 const initialState = {
   value: '',
-  data: null,
+  data: [],
   error: false,
   loading: false
 }
@@ -17,21 +17,16 @@ const reducer = (state = initialState, action) => {
         }
     case GET_DATA_SUCCESS: 
         return {
-          data: action.data.items.map(item => ({
-            name: item.name,
-            description: item.description,
-            author: item.owner.login,
-            authorAvatar: item.owner.avatar_url,
-            stars: item.stargazers_count,
-            id: item.owner.id
-          })),
+          ...state,
+          data: action.data,
           loading: false
         }
     case GET_DATA_FAILED: 
         return {
           ...state, 
           error: true,
-          loading: false
+          loading: false,
+          data: []
         }
   default: return state  
   }

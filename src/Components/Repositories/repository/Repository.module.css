@@ -1,6 +1,6 @@
 /* CONTAINER */
 
-.Container {
+.container {
   border: 1px solid black;
   margin: 10px auto;
   display: flex;
@@ -10,7 +10,7 @@
 
 /* LEFT SIDE */
 
-.LeftSide {
+.leftSide {
   width: 30%;
   border-right: 1px solid black;
   padding: 10px 0px 10px 0px;
@@ -18,13 +18,13 @@
   
 }
 
-.LeftSide img {
+.leftSide img {
   width: 80px;
   height: 80px;
   border-radius: 50px;
 }
 
-.LeftSide h1{
+.leftSide h1{
   font-size: 15px;
   text-align: center;
   word-wrap: break-word;
@@ -32,14 +32,14 @@
 }
 
 /* RIGHT SIDE */
-.RightSide {
+.rightSide {
   width: 70%;
   text-align: left;
   max-width: 500px;
   padding: 10px 20px 10px 20px;
 }
 
-.RightSide h3 {
+.rightSide h3 {
   font-size: 15px;
   font-weight: 400;
   word-wrap: break-word

@@ -7,7 +7,15 @@ function* sagaRequestWorker({inputValue}){
     try{
       yield delay(1000)
       const data = yield call(getRepos, inputValue)
-      yield put(actions.getDataSuccess(data))
+      const dataArr = data.items.map(item => ({
+        name: item.name,
+        description: item.description,
+        author: item.owner.login,
+        authorAvatar: item.owner.avatar_url,
+        stars: item.stargazers_count,
+        id: item.owner.id
+      }))
+      yield put(actions.getDataSuccess(dataArr))
     } catch (error) {
       yield put(actions.getDataFailed())
     }

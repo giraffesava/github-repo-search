@@ -5,28 +5,24 @@ import PropTypes from 'prop-types'
 
 const Repositories = () => {
   const loading = useSelector(state => state.repos.loading)
-  const error = useSelector(state => state.repos.error)
   const data = useSelector(state => state.repos.data)
-  const value = useSelector(state => state.repos.value)
-  console.log(loading)
-  let window = <h1>Write something</h1>
-  if(!data || error){
-    window = <h1>Write something</h1>
-  } else if (loading && value.length > 0){
-    window = <h1>Loading...</h1>
-  } else if (data) {
-    window = data.map(item => <Repository 
-      key={item.id + Math.random()}
-      name={item.name}
-      author={item.author}
-      stars={item.stars}
-      description={item.description}
-      authorAvatar={item.authorAvatar}
-    />)
+  const error = useSelector(state => state.repos.error)
+  if(!loading && !data.length && error){
+    return <div><h1>Write something</h1></div>
+  } 
+  if (loading){
+    return <div><h1>Loading...</h1></div>
   }
   return (
     <div>
-      {window}
+      {!!data.length && data.map(item => <Repository 
+        key={item.id + Math.random()}
+        name={item.name}
+        author={item.author}
+        stars={item.stars}
+        description={item.description}
+        authorAvatar={item.authorAvatar}
+      />)}
     </div>
   )
 }
@@ -34,8 +30,7 @@ const Repositories = () => {
 Repositories.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
-  data: PropTypes.array,
-  value: PropTypes.string,
+  data: PropTypes.array
 }
 
 export default Repositories
