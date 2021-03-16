@@ -27,7 +27,8 @@
 .LeftSide h1{
   font-size: 15px;
   text-align: center;
-  word-wrap: break-word
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* RIGHT SIDE */

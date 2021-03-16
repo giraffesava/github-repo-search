@@ -1,6 +1,6 @@
+import Input from '../../Components/Input/Input';
+import Data from '../../Components/dataFromRequest/Data'
 import './App.css';
-import Input from './Components/Input/Input';
-import Data from './Components/dataFromRequest/Data'
 
 function App() {
   return (

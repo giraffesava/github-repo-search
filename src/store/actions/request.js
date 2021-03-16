@@ -1,21 +1,21 @@
-import * as actionTypes from './actionTypes'
+import {GET_API_REQUEST, GET_DATA_SUCCESS, GET_DATA_FAILED} from './index'
 
 export const getApiRequest = (inputValue) => {
   return {
-    type: actionTypes.GET_API_REQUEST,
+    type: GET_API_REQUEST,
     inputValue
   }
 }
 
 export const getDataSuccess = (data) => {
   return {
-    type: actionTypes.GET_DATA_SUCCESS,
+    type: GET_DATA_SUCCESS,
     data
   }
 }
 
 export const getDataFailed = () => {
   return {
-    type: actionTypes.GET_DATA_FAILED
+    type: GET_DATA_FAILED
   }
 }

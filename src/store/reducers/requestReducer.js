@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actionTypes'
+import {GET_API_REQUEST, GET_DATA_SUCCESS, GET_DATA_FAILED} from '../actions/index'
 
 const initialState = {
   value: '',
@@ -9,13 +9,13 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type){
-    case actionTypes.GET_API_REQUEST:
+    case GET_API_REQUEST:
         return {
           ...state,
           value: action.inputValue,
           loading: true
         }
-    case actionTypes.GET_DATA_SUCCESS: 
+    case GET_DATA_SUCCESS: 
         return {
           data: action.data.items.map(item => ({
             name: item.name,
@@ -27,10 +27,11 @@ const reducer = (state = initialState, action) => {
           })),
           loading: false
         }
-    case actionTypes.GET_DATA_FAILED: 
+    case GET_DATA_FAILED: 
         return {
           ...state, 
-          error: true
+          error: true,
+          loading: false
         }
   default: return state  
   }

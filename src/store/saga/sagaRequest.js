@@ -1,6 +1,6 @@
 import {call, put, delay, takeLatest} from 'redux-saga/effects'
 import * as actions from '../actions/index'
-import * as actionTypes from '../actions/actionTypes'
+import {GET_API_REQUEST} from '../actions/index'
 import {getRepos} from '../api'
 
 function* sagaRequestWorker({inputValue}){
@@ -14,5 +14,5 @@ function* sagaRequestWorker({inputValue}){
 }
 
 export function* apiWatcher() {
-  yield takeLatest(actionTypes.GET_API_REQUEST, sagaRequestWorker);
+  yield takeLatest(GET_API_REQUEST, sagaRequestWorker);
 }
