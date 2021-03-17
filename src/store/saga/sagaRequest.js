@@ -13,7 +13,8 @@ function* sagaRequestWorker({inputValue}){
         author: item.owner.login,
         authorAvatar: item.owner.avatar_url,
         stars: item.stargazers_count,
-        id: item.id
+        id: item.id,
+        address: `https://github.com/` + item.owner.login
       }))
       yield put(actions.getDataSuccess(dataArr))
     } catch (error) {

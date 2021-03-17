@@ -6,13 +6,14 @@ import PropTypes from 'prop-types'
 const Repositories = () => {
   const loading = useSelector(state => state.repos.loading)
   const data = useSelector(state => state.repos.data)
-  const error = useSelector(state => state.repos.error)
-  if(!loading && !data.length && error){
+
+  if(!loading && !data.length){
     return <div><h1>Write something</h1></div>
   } 
   if (loading){
     return <div><h1>Loading...</h1></div>
   }
+
   return (
     <div>
       {!!data.length && data.map(item => <Repository 
@@ -22,6 +23,7 @@ const Repositories = () => {
         stars={item.stars}
         description={item.description}
         authorAvatar={item.authorAvatar}
+        address={item.address}
       />)}
     </div>
   )
