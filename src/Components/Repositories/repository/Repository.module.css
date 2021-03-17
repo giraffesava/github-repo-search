@@ -1,19 +1,26 @@
 /* CONTAINER */
 
 .container {
-  border: 1px solid black;
+  border: 1px solid #24292E;
   margin: 10px auto;
   display: flex;
   width: 60%;
-  background-color: rgba(255, 255, 255, 0.356);
+  background-color: #fff;
+  text-decoration: none;
+  color: #24292E;
+}
+
+.container:hover {
+  background-color: rgb(216, 216, 216);
+  transform: scale(1.02);
 }
 
 /* LEFT SIDE */
 
 .leftSide {
   width: 30%;
-  border-right: 1px solid black;
-  padding: 10px 0px 10px 0px;
+  border-right: 2px solid #24292E;
+  padding: 3% 0px 3% 0px;
   box-sizing: border-box;
   
 }
@@ -22,6 +29,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50px;
+  margin: 5% auto;
 }
 
 .leftSide h1{
@@ -29,6 +37,7 @@
   text-align: center;
   word-wrap: break-word;
   box-sizing: border-box;
+  margin: 5% auto;
 }
 
 /* RIGHT SIDE */
