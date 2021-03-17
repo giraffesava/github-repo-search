@@ -1,5 +1,6 @@
 input {
   font-size: 35px;
   margin: 20px;
+  background: url(./search.png) no-repeat center right ;
   background-color: rgb(255, 255, 255);
 }
