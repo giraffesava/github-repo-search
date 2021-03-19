@@ -1,7 +1,6 @@
 import {GET_API_REQUEST, GET_DATA_SUCCESS, GET_DATA_FAILED} from '../actions/index'
 
 const initialState = {
-  value: '',
   data: [],
   error: false,
   loading: false
@@ -12,14 +11,15 @@ const reducer = (state = initialState, action) => {
     case GET_API_REQUEST:
         return {
           ...state,
-          value: action.inputValue,
-          loading: true
+          loading: true,
+          error: false,
         }
     case GET_DATA_SUCCESS: 
         return {
           ...state,
           data: action.data,
-          loading: false
+          loading: false,
+          error: false,
         }
     case GET_DATA_FAILED: 
         return {

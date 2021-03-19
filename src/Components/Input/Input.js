@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Input.module.css'
+import classes from './Input.module.css'
 import {useDispatch} from 'react-redux'
 import {getApiRequest} from '../../store/actions/index'
 
@@ -8,7 +8,7 @@ const Input = () => {
   const dispatch = useDispatch()
 
   const inputValueHandler = (event) => {
-    const value = event.target.value.trim()
+    const value = event.target.value.trimLeft()
     setInput(value)
     dispatch(getApiRequest(value))
   }
@@ -16,7 +16,7 @@ const Input = () => {
   return (
     <div>
       <input 
-        className="input"
+        className={classes.entryField}
         type="text" 
         value={input}
         autoFocus={true}

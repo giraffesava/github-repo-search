@@ -1,6 +1,9 @@
-input {
+.entryField {
   font-size: 35px;
   margin: 20px;
+  width: 400px;
+  padding-right: 33px;
+  box-sizing: border-box;
   background: url(./search.png) no-repeat center right ;
   background-color: rgb(255, 255, 255);
 }
